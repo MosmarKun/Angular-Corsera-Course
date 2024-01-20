@@ -4,7 +4,7 @@
     angular.module('messageApp', [])
 
     .controller('Controller', function($scope){
-        $scope.message = "Please enter data first";
+        $scope.message = "";
         $scope.newMessage = "None";
 
         $scope.doChangeMessage = function(){
