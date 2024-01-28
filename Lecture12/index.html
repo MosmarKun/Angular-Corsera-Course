@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='MsgApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>Filters</title>
+  </head>
+  <body>
+    <h1>Filters</h1>
+    <div ng-controller='MsgController'>
+      Original: {{sayMessage()}} <br>
+      Love: {{sayLovesMessage()}} <br>
+      Love: {{sayMessage() | loves}} <br>
+      Truth: {{sayMessage() | truth : 'eat' : 'shove'}} <br>
+      BIG TRUTH: {{sayMessage() | truth : 'eat' : 'shove' | uppercase}} <br>
+
+      <div>
+        <button ng-click="feedYaakov()">Feed Yaakov</button>
+        <!--Cost: {{ cookieCost | currency : "SAR " : 2 }}--> 
+        <br>
+
+        <img ng-src="images/yaakov_{{stateOfBeing}}.png">
+      </div>
+    </div>
+  </body>
+</html>
