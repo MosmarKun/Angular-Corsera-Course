@@ -9,13 +9,15 @@
   </head>
   <body>
     <h1>ng-repeat</h1>
-    <div ng-controller='ShoppingListController'>
-      <!-- Searchable Shopping List: -->
-      <h3>Shopping List:</h3>
-      <input type="text" ng-model="search">
-      <ul>
-        <li ng-repeat="item in shoppingList | filter : search">{{ item }}</li>
-      </ul>
+    <div ng-controller='ShoppingListController as P'>
+      <div ng-controller='ChildShoppingListController as C'>
+        <!-- Searchable Shopping List: -->
+        <h3>Shopping List:</h3>
+        <input type="text" ng-model="search">
+        <ul>
+          <li ng-repeat="item in pc.shoppingList | filter : search">{{ item }}</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
